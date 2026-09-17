@@ -9,7 +9,6 @@ import ModalTrigger from "@/components/ModalTrigger";
 import { FooterBackgroundGradient, TextHoverEffect } from "@/components/ui/hover-footer";
 
 const LEGAL_LINKS = [
-  { label: "Contact Us", type: "modal" },
   { label: "Privacy Policy", href: "/privacy" },
 ];
 const COMPANY_LINKS = [
@@ -18,8 +17,7 @@ const COMPANY_LINKS = [
   { label: "Careers", href: "/careers" },
 ];
 const BOTTOM_LINKS = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Contact", type: "modal" },
+  { label: "Contact Us", type: "modal" },
 ];
 
 export default function Footer() {
@@ -122,11 +120,7 @@ export default function Footer() {
             <ul className="mt-6 flex flex-col gap-3">
               {LEGAL_LINKS.map((link) => (
                 <li key={link.label}>
-                  {link.type === "modal" ? (
-                    <ModalTrigger mode="contact" className="group flex w-full items-center justify-between border-b border-white/10 pb-3 text-left font-jakarta text-[14px] text-white/65 transition-colors hover:border-[#b9a9ff] hover:text-white">{link.label}<ArrowUpRight aria-hidden="true" className="size-4 opacity-0 transition-opacity group-hover:opacity-100" /></ModalTrigger>
-                  ) : (
-                    <a href={link.href} className="group flex items-center justify-between border-b border-white/10 pb-3 font-jakarta text-[14px] text-white/65 transition-colors hover:border-[#b9a9ff] hover:text-white">{link.label}<ArrowUpRight aria-hidden="true" className="size-4 opacity-0 transition-opacity group-hover:opacity-100" /></a>
-                  )}
+                  <a href={link.href} className="group flex items-center justify-between border-b border-white/10 pb-3 font-jakarta text-[14px] text-white/65 transition-colors hover:border-[#b9a9ff] hover:text-white">{link.label}<ArrowUpRight aria-hidden="true" className="size-4 opacity-0 transition-opacity group-hover:opacity-100" /></a>
                 </li>
               ))}
             </ul>
@@ -145,11 +139,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             {BOTTOM_LINKS.map((link) => (
-              link.type === "modal" ? (
-                <ModalTrigger mode="contact" key={link.label} className="font-mono text-[10px] uppercase tracking-[0.5px] text-white/55 transition-colors hover:text-white">{link.label}</ModalTrigger>
-              ) : (
-                <a key={link.label} href={link.href} className="font-mono text-[10px] uppercase tracking-[0.5px] text-white/55 transition-colors hover:text-white">{link.label}</a>
-              )
+              <ModalTrigger mode="contact" key={link.label} className="font-mono text-[10px] uppercase tracking-[0.5px] text-white/55 transition-colors hover:text-white">{link.label}</ModalTrigger>
             ))}
           </div>
         </div>
