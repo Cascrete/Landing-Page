@@ -157,10 +157,10 @@ export default function ContactModal() {
                   Approx. budget
                   <select name="budget" defaultValue="" className="h-11 rounded-[8px] border border-ink-500 bg-white px-3 font-jakarta text-[13px] font-normal text-ink-900 outline-none focus:border-primary">
                     <option value="" disabled>Choose a range</option>
-                    <option>Under $5k</option>
-                    <option>$5k - $15k</option>
-                    <option>$15k - $30k</option>
-                    <option>$30k+</option>
+                    <option>Under ₹5,000</option>
+                    <option>₹5,000 - ₹15,000</option>
+                    <option>₹15,000 - ₹30,000</option>
+                    <option>₹30,000+</option>
                   </select>
                 </label>
               </div>

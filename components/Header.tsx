@@ -16,9 +16,9 @@ export default function Header() {
   const homePath = pathname === "/" ? "" : "/";
 
   return (
-    <header className="sticky top-0 z-50 flex w-full items-center justify-between border-b border-[rgba(202,196,211,0.35)] bg-[rgba(250,248,255,0.9)] px-[60px] pb-[13px] pt-[12px] backdrop-blur-[12px] max-md:flex-wrap max-md:gap-x-4 max-md:gap-y-3 max-md:px-5 max-md:py-3">
+    <header className="sticky top-0 z-50 flex w-full items-center justify-between border-b border-[rgba(202,196,211,0.35)] bg-[rgba(250,248,255,0.9)] px-[80px] pb-[13px] pt-[12px] backdrop-blur-[12px] max-md:flex-wrap max-md:gap-x-4 max-md:gap-y-3 max-md:px-5 max-md:py-3">
       {/* Branding */}
-      <a href={homePath || "#top"} className="flex w-[130px] shrink-0 items-center gap-[6px]">
+      <a href={homePath || "#top"} className="flex w-[160px] shrink-0 items-center gap-[8px]">
         <span className="flex size-[32px] shrink-0 items-center justify-center overflow-hidden rounded-[12px]">
           <Image
             src={imgLogoVector}
@@ -34,7 +34,7 @@ export default function Header() {
       </a>
 
       {/* Nav */}
-      <nav className="flex items-center gap-[40px] max-md:order-3 max-md:w-full max-md:justify-between max-md:gap-2 max-md:overflow-x-auto">
+      <nav className="flex items-center gap-[56px] max-md:order-3 max-md:w-full max-md:justify-between max-md:gap-2 max-md:overflow-x-auto">
         {NAV_LINKS.map((link) => (
           <a
             key={link.label}

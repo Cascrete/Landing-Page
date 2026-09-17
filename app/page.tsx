@@ -21,6 +21,31 @@ export default function Home() {
       <Header />
 
       <main className="relative flex w-full flex-col items-center justify-center gap-[64px] bg-surface">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "Cascrete",
+              url: "https://cascrete.com",
+              logo: "https://cascrete.com/assets/logo.svg",
+              email: "contact@cascrete.com",
+              description:
+                "Cascrete designs and develops websites, apps, brands, social media creatives, packaging, and editorial experiences.",
+              serviceType: [
+                "Website Development",
+                "App Development",
+                "UI/UX Design",
+                "Branding and Identity",
+                "Automation and Tools",
+                "Social Media Creatives",
+                "Packaging Design",
+                "Editorial Design",
+              ],
+            }),
+          }}
+        />
         <BackgroundBlobs />
         <Hero />
         <DiscoveryModule />

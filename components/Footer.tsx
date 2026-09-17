@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FormEvent, useState } from "react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { imgLogoVector } from "@/lib/assets";
 import ModalTrigger from "@/components/ModalTrigger";
+import { FooterBackgroundGradient, TextHoverEffect } from "@/components/ui/hover-footer";
 
 const LEGAL_LINKS = [
   { label: "Contact Us", type: "modal" },
-  { label: "Start a Project", type: "modal" },
   { label: "Privacy Policy", href: "/privacy" },
 ];
 const COMPANY_LINKS = [
@@ -25,6 +26,15 @@ export default function Footer() {
   const pathname = usePathname();
   const homePath = pathname === "/" ? "" : "/";
   const [newsletterState, setNewsletterState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  let newsletterMessage = {
+    text: "Bi-weekly technical architecture dispatch. No spam.",
+    className: "text-white/40",
+  };
+  if (newsletterState === "success") {
+    newsletterMessage = { text: "You're on the list.", className: "text-[#80eeb4]" };
+  } else if (newsletterState === "error") {
+    newsletterMessage = { text: "Could not subscribe. Try again.", className: "text-[#ffaaa8]" };
+  }
 
   const handleNewsletterSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -58,120 +68,87 @@ export default function Footer() {
   };
 
   return (
-    <footer className="flex w-full flex-col items-start border-t border-[rgba(202,196,211,0.35)] bg-surface-alt pt-px">
-      <div className="flex w-full max-w-[1360px] flex-col items-start gap-[64px] px-[32px] pb-[48px] pt-[64px] max-md:gap-10 max-md:px-5 max-md:py-12">
-        <div className="grid w-full grid-cols-5 gap-x-[48px] gap-y-[48px] max-md:grid-cols-1">
-          {/* Brand + newsletter */}
-          <div className="col-span-2 flex flex-col items-start gap-[16px] self-start max-md:col-span-1">
-            <div className="flex items-center gap-[8px]">
-              <span className="flex size-[32px] shrink-0 items-center justify-center overflow-hidden rounded-[12px]">
-                <Image
-                  src={imgLogoVector}
-                  alt="Cascrete logo"
-                  width={17}
-                  height={24}
-                  className="h-[24.139px] w-[16.879px]"
-                />
+    <footer className="relative w-full overflow-hidden border-t border-[rgba(202,196,211,0.35)] bg-dark-900 text-white">
+      <FooterBackgroundGradient />
+      <div className="relative z-10 mx-auto flex w-full max-w-[1360px] flex-col px-8 pb-8 pt-16 max-md:px-5 max-md:pt-12">
+        <div className="grid grid-cols-12 gap-x-12 gap-y-14 max-md:grid-cols-1">
+          <div className="col-span-5 flex flex-col items-start gap-5 max-md:col-span-1">
+            <div className="flex items-center gap-2">
+              <span className="flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white/10 ring-1 ring-white/15">
+                <Image src={imgLogoVector} alt="Cascrete logo" width={17} height={24} className="h-6 w-[17px]" />
               </span>
-              <span className="font-jakarta text-[20px] font-bold leading-[28px] tracking-[-0.5px] text-ink-900">
-                Cascrete
-              </span>
+              <span className="font-montserrat text-xl font-semibold leading-7 tracking-[-0.5px] text-white">Cascrete</span>
             </div>
-
-            <p className="max-w-[384px] font-jakarta text-[15px] leading-[24px] text-ink-700">
-              We design and build websites, apps, and digital products for
-              founders and businesses ready to move.
+            <p className="max-w-[390px] font-jakarta text-[15px] leading-6 text-white/70">
+              We design and build websites, apps, and digital products for founders and businesses ready to move.
             </p>
-
-            <form
-              className="flex w-full max-w-[384px] flex-col gap-[4px] pt-[8px]"
-              onSubmit={handleNewsletterSubmit}
-            >
-              <div className="flex items-center gap-[8px]">
-                <input
-                  type="email"
-                  required
-                  placeholder="Enter enterprise email"
-                  className="h-[48px] flex-1 rounded-[8px] border border-ink-500 px-[17px] py-[16px] font-jakarta text-[13px] text-ink-700 placeholder:text-[rgba(72,69,81,0.6)] focus:outline-none focus:ring-2 focus:ring-primary-light"
-                />
-                <button
-                  disabled={newsletterState === "submitting"}
-                  type="submit"
-                  className="h-[48px] shrink-0 rounded-[8px] bg-primary-light px-[16px] font-jakarta text-[14px] font-semibold leading-[20px] tracking-[-0.14px] text-white transition-opacity hover:opacity-90 disabled:cursor-wait disabled:opacity-60"
-                >
+            <div className="mt-2 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.7px] text-[#d9d0ff]">
+              <span className="size-2 rounded-full bg-[#80eeb4] shadow-[0_0_14px_rgba(128,238,180,0.8)]" />
+              <span>Taking on select projects</span>
+            </div>
+            <form className="mt-3 flex w-full max-w-[430px] flex-col gap-2" onSubmit={handleNewsletterSubmit}>
+              <label htmlFor="footer-email" className="font-mono text-[10px] uppercase tracking-[0.6px] text-white/55">Stay in the loop</label>
+              <div className="flex items-center gap-2 max-sm:flex-col max-sm:items-stretch">
+                <div className="relative flex-1">
+                  <Mail aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-white/45" />
+                  <input id="footer-email" type="email" required placeholder="Enter enterprise email" className="h-12 w-full rounded-lg border border-white/15 bg-white/10 pl-11 pr-4 font-jakarta text-[13px] text-white outline-none placeholder:text-white/45 focus:border-[#b9a9ff] focus:ring-2 focus:ring-primary-light/40" />
+                </div>
+                <button disabled={newsletterState === "submitting"} type="submit" className="flex h-12 shrink-0 items-center justify-center gap-2 rounded-lg bg-primary-light px-5 font-jakarta text-[14px] font-semibold text-white transition-colors hover:bg-[#8977d0] disabled:cursor-wait disabled:opacity-60">
                   {newsletterState === "submitting" ? "Sending..." : "Subscribe"}
+                  <ArrowUpRight aria-hidden="true" className="size-4" />
                 </button>
               </div>
-              {newsletterState === "success" ? (
-                <span className="font-mono text-[9px] uppercase leading-[14px] tracking-[0.5px] text-primary-dark">You&apos;re on the list.</span>
-              ) : newsletterState === "error" ? (
-                <span role="alert" className="font-mono text-[9px] uppercase leading-[14px] tracking-[0.5px] text-[#8b2929]">Could not subscribe. Try again.</span>
-              ) : (
-                <span className="font-mono text-[6px] uppercase leading-[14px] tracking-[0.5px] text-[rgba(72,69,81,0.7)]">Bi-weekly technical architecture dispatch. No spam.</span>
-              )}
+              <span role={newsletterState === "error" ? "alert" : undefined} className={`font-mono text-[9px] uppercase tracking-[0.5px] ${newsletterMessage.className}`}>
+                {newsletterMessage.text}
+              </span>
             </form>
           </div>
 
-          <div className="col-span-1 max-md:hidden" />
-
-          {/* Company links */}
-          <div className="col-span-1 flex flex-col items-start gap-[12px] self-start pb-[38px] max-md:col-span-1 max-md:pb-0">
-            <span className="font-mono text-[12px] uppercase leading-[16px] tracking-[0.6px] text-ink-900">
-              Company
-            </span>
-            <ul className="flex w-full flex-col gap-[8px]">
+          <div className="col-span-2 col-start-7 max-md:col-span-1 max-md:col-start-auto">
+            <span className="font-mono text-[11px] uppercase tracking-[0.7px] text-[#d9d0ff]">Company</span>
+            <ul className="mt-6 flex flex-col gap-3">
               {COMPANY_LINKS.map((link) => (
-                <li
-                  key={link.label}
-                  className="w-full border-b border-[rgba(202,196,211,0.2)] pb-[5px]"
-                >
-                  <a
-                    href={link.href.startsWith("#") ? `${homePath}${link.href}` : link.href}
-                    className="font-jakarta text-[13px] leading-[20px] text-ink-700 hover:text-ink-900"
-                  >
-                    {link.label}
+                <li key={link.label}>
+                  <a href={link.href.startsWith("#") ? `${homePath}${link.href}` : link.href} className="group flex items-center justify-between border-b border-white/10 pb-3 font-jakarta text-[14px] text-white/65 transition-colors hover:border-[#b9a9ff] hover:text-white">
+                    {link.label}<ArrowUpRight aria-hidden="true" className="size-4 opacity-0 transition-opacity group-hover:opacity-100" />
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Legal links */}
-          <div className="col-span-1 flex flex-col items-start gap-[12px] self-start pb-[38px] max-md:col-span-1 max-md:pb-0">
-            <span className="font-mono text-[12px] uppercase leading-[16px] tracking-[0.6px] text-ink-900">
-              Legal
-            </span>
-            <ul className="flex w-full flex-col gap-[8px]">
+          <div className="col-span-2 max-md:col-span-1">
+            <span className="font-mono text-[11px] uppercase tracking-[0.7px] text-[#d9d0ff]">Legal</span>
+            <ul className="mt-6 flex flex-col gap-3">
               {LEGAL_LINKS.map((link) => (
-                <li
-                  key={link.label}
-                  className="w-full border-b border-[rgba(202,196,211,0.2)] pb-[5px]"
-                >
+                <li key={link.label}>
                   {link.type === "modal" ? (
-                    <ModalTrigger mode="contact" className="font-jakarta text-[13px] leading-[20px] text-ink-700 hover:text-ink-900">{link.label}</ModalTrigger>
+                    <ModalTrigger mode="contact" className="group flex w-full items-center justify-between border-b border-white/10 pb-3 text-left font-jakarta text-[14px] text-white/65 transition-colors hover:border-[#b9a9ff] hover:text-white">{link.label}<ArrowUpRight aria-hidden="true" className="size-4 opacity-0 transition-opacity group-hover:opacity-100" /></ModalTrigger>
                   ) : (
-                    <a href={link.href} className="font-jakarta text-[13px] leading-[20px] text-ink-700 hover:text-ink-900">{link.label}</a>
+                    <a href={link.href} className="group flex items-center justify-between border-b border-white/10 pb-3 font-jakarta text-[14px] text-white/65 transition-colors hover:border-[#b9a9ff] hover:text-white">{link.label}<ArrowUpRight aria-hidden="true" className="size-4 opacity-0 transition-opacity group-hover:opacity-100" /></a>
                   )}
                 </li>
               ))}
             </ul>
           </div>
+
         </div>
 
-        {/* Bottom bar */}
-        <div className="flex w-full items-center justify-between border-t border-[rgba(202,196,211,0.35)] pt-[25px] max-md:flex-col max-md:items-start max-md:gap-4">
-          <div className="flex items-center gap-[16px]">
-            <span className="size-[8px] shrink-0 rounded-full bg-primary-dark" />
-            <span className="whitespace-nowrap font-mono text-[10px] uppercase leading-[14px] tracking-[0.5px] text-[rgba(72,69,81,0.8)]">
-              © 2026 Cascrete. All rights reserved.
-            </span>
+        <div className="relative mt-10 h-36 overflow-hidden border-y border-white/10 max-md:h-24">
+          <TextHoverEffect text="Cascrete" duration={0.35} className="absolute inset-0" />
+        </div>
+
+        <div className="flex w-full items-center justify-between gap-4 border-t border-white/10 pt-6 max-md:flex-col max-md:items-start">
+          <div className="flex items-center gap-3">
+            <span className="size-2 rounded-full bg-[#80eeb4]" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.5px] text-white/45">© 2026 Cascrete. All rights reserved.</span>
           </div>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             {BOTTOM_LINKS.map((link) => (
               link.type === "modal" ? (
-                <ModalTrigger mode="contact" key={link.label} className="whitespace-nowrap font-mono text-[10px] uppercase leading-[14px] tracking-[0.5px] text-ink-700 hover:text-ink-900">{link.label}</ModalTrigger>
+                <ModalTrigger mode="contact" key={link.label} className="font-mono text-[10px] uppercase tracking-[0.5px] text-white/55 transition-colors hover:text-white">{link.label}</ModalTrigger>
               ) : (
-                <a key={link.label} href={link.href} className="whitespace-nowrap font-mono text-[10px] uppercase leading-[14px] tracking-[0.5px] text-ink-700 hover:text-ink-900">{link.label}</a>
+                <a key={link.label} href={link.href} className="font-mono text-[10px] uppercase tracking-[0.5px] text-white/55 transition-colors hover:text-white">{link.label}</a>
               )
             ))}
           </div>

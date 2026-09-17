@@ -35,6 +35,24 @@ const CAPABILITIES = [
     description:
       "Internal tools and workflow automations that cut out repetitive work and save your team real hours.",
   },
+  {
+    number: "06",
+    title: "Social Media Creatives",
+    description:
+      "Scroll-stopping social media creatives that keep your brand consistent, recognizable, and ready to publish.",
+  },
+  {
+    number: "07",
+    title: "Packaging Design",
+    description:
+      "Distinctive packaging systems that make products easier to recognize, understand, and choose.",
+  },
+  {
+    number: "08",
+    title: "Editorial Design",
+    description:
+      "Editorial layouts and visual systems for print and digital content that make complex stories easy to follow.",
+  },
 ];
 
 const DELIVERABLES = [
@@ -52,7 +70,7 @@ export default function CapabilitiesSection() {
       id="capabilities"
       className="flex w-full flex-col items-center justify-center border-b border-[rgba(202,196,211,0.3)] bg-surface pb-[65px] pt-[64px] max-md:py-12"
     >
-      <div className="flex w-full max-w-[1440px] flex-col items-start gap-[64px] px-[64px] max-md:gap-10 max-md:px-5">
+      <div className="flex w-full max-w-[1360px] flex-col items-start gap-[64px] px-[32px] max-md:gap-10 max-md:px-5">
         {/* Heading row */}
         <div className="flex w-full items-end justify-between border-b border-[rgba(202,196,211,0.3)] pb-[17px] max-md:flex-col max-md:items-start max-md:gap-4">
           <div className="flex flex-col items-start gap-[8px]">

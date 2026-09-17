@@ -32,9 +32,65 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cascrete — Build What's Next For Your Business",
+  metadataBase: new URL("https://cascrete.com"),
+  title: {
+    default: "Cascrete | Web, App, Brand & Design Studio",
+    template: "%s | Cascrete",
+  },
   description:
-    "We design, develop, and ship digital products — websites, apps, and tools — built for speed, scale, and real results.",
+    "Cascrete designs and develops websites, apps, brands, social media creatives, packaging, and editorial experiences for ambitious businesses.",
+  keywords: [
+    "Cascrete",
+    "web development studio",
+    "app development",
+    "UI UX design",
+    "branding and identity",
+    "social media creatives",
+    "packaging design",
+    "editorial design",
+    "digital product studio",
+  ],
+  authors: [{ name: "Cascrete" }],
+  creator: "Cascrete",
+  publisher: "Cascrete",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://cascrete.com",
+    siteName: "Cascrete",
+    title: "Cascrete | Web, App, Brand & Design Studio",
+    description:
+      "Websites, apps, branding, social creatives, packaging, and editorial design built for businesses ready to move.",
+    images: [
+      {
+        url: "/assets/logo.svg",
+        alt: "Cascrete logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Cascrete | Web, App, Brand & Design Studio",
+    description:
+      "Websites, apps, branding, social creatives, packaging, and editorial design built for businesses ready to move.",
+    images: ["/assets/logo.svg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  icons: {
+    icon: "/assets/logo.svg",
+  },
 };
 
 export default function RootLayout({

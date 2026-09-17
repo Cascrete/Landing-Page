@@ -40,6 +40,24 @@ const CATEGORIES: Category[] = [
     description:
       "Internal tools and workflow automations that cut out repetitive work and save your team real hours.",
   },
+  {
+    label: "Social Creatives",
+    tag: "CONTENT FOCUS",
+    description:
+      "Scroll-stopping social media creatives that keep your brand consistent, recognizable, and ready to publish.",
+  },
+  {
+    label: "Packaging",
+    tag: "PACKAGING FOCUS",
+    description:
+      "Distinctive packaging systems that make products easier to recognize, understand, and choose.",
+  },
+  {
+    label: "Editorial Design",
+    tag: "EDITORIAL FOCUS",
+    description:
+      "Editorial layouts and visual systems for print and digital content that make complex stories easy to follow.",
+  },
 ];
 
 export default function DiscoveryModule() {
@@ -47,8 +65,8 @@ export default function DiscoveryModule() {
   const active = CATEGORIES[activeIndex];
 
   return (
-    <section className="flex w-full flex-col items-center justify-center px-[64px] max-md:px-5">
-      <div className="w-full rounded-[16px] border border-[rgba(202,196,211,0.5)] bg-surface-card p-[33px] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] max-md:p-5">
+    <section className="flex w-full flex-col items-center justify-center">
+      <div className="w-full max-w-[1360px] rounded-[16px] border border-[rgba(202,196,211,0.5)] bg-surface-card p-[33px] max-md:mx-5 max-md:p-5 drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)]">
         {/* Heading row */}
         <div className="flex items-center justify-between border-b border-[rgba(202,196,211,0.4)] pb-[17px] max-md:flex-col max-md:items-start max-md:gap-2">
           <div>
