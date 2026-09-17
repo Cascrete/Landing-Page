@@ -12,6 +12,7 @@ import ContactModal from "@/components/ContactModal";
 export default function Home() {
   return (
     <div
+      id="top"
       className="flex w-full flex-col items-center"
       style={{
         backgroundImage:
