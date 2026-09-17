@@ -25,7 +25,7 @@ const STEPS = [
     title: "Launch & Support",
     description:
       "We handle deployment and stick around after launch to fix issues, make small adjustments, and help you plan what's next.",
-    phase: "Phase 4 • Launch",
+    phase: "Phase 4 · Launch",
   },
 ];
 
