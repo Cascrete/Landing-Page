@@ -3,57 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { imgChevronIcon } from "@/lib/assets";
-
-const CAPABILITIES = [
-  {
-    number: "01",
-    title: "Website Development",
-    description:
-      "Custom websites and web platforms — responsive, fast, and built to convert, not just look good.",
-  },
-  {
-    number: "02",
-    title: "App Development",
-    description:
-      "Web and mobile apps built from scratch, architected to handle real users and grow with your product.",
-  },
-  {
-    number: "03",
-    title: "UI/UX Design",
-    description:
-      "Wireframes, prototypes, and polished interfaces — designed around how people actually use the product.",
-  },
-  {
-    number: "04",
-    title: "Branding & Identity",
-    description:
-      "Logo, color system, typography, and a visual identity that stays consistent everywhere it shows up.",
-  },
-  {
-    number: "05",
-    title: "Automation & Tools",
-    description:
-      "Internal tools and workflow automations that cut out repetitive work and save your team real hours.",
-  },
-  {
-    number: "06",
-    title: "Social Media Creatives",
-    description:
-      "Scroll-stopping social media creatives that keep your brand consistent, recognizable, and ready to publish.",
-  },
-  {
-    number: "07",
-    title: "Packaging Design",
-    description:
-      "Distinctive packaging systems that make products easier to recognize, understand, and choose.",
-  },
-  {
-    number: "08",
-    title: "Editorial Design",
-    description:
-      "Editorial layouts and visual systems for print and digital content that make complex stories easy to follow.",
-  },
-];
+import { SERVICES } from "@/lib/services";
 
 const DELIVERABLES = [
   "Fixed project scope & timeline",
@@ -91,11 +41,11 @@ export default function CapabilitiesSection() {
         <div className="grid w-full grid-cols-12 gap-x-[32px] gap-y-[32px] max-md:grid-cols-1">
           {/* Accordion list */}
           <div className="col-span-7 flex flex-col items-start self-start border-y border-[rgba(202,196,211,0.4)] max-md:col-span-1">
-            {CAPABILITIES.map((item, index) => {
+            {SERVICES.map((item, index) => {
               const isOpen = openIndex === index;
               return (
                 <div
-                  key={item.number}
+                  key={item.label}
                   className={`w-full ${index > 0 ? "border-t border-[rgba(202,196,211,0.4)]" : ""
                     }`}
                 >
@@ -107,10 +57,10 @@ export default function CapabilitiesSection() {
                   >
                     <span className="flex items-baseline gap-[16px]">
                       <span className="font-montserrat text-[11px] font-bold leading-[14px] tracking-[1.32px] text-primary-deep">
-                        {item.number}
+                        {String(index + 1).padStart(2, "0")}
                       </span>
                       <span className="font-hanken text-[20px] font-semibold leading-[26px] tracking-[-0.2px] text-[#1a1b20]">
-                        {item.title}
+                        {item.label}
                       </span>
                     </span>
                     <Image

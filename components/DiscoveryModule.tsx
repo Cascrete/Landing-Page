@@ -2,67 +2,11 @@
 
 import { useState } from "react";
 import ModalTrigger from "@/components/ModalTrigger";
-
-type Category = {
-  label: string;
-  tag: string;
-  description: string;
-};
-
-const CATEGORIES: Category[] = [
-  {
-    label: "Website Development",
-    tag: "LAUNCH FOCUS",
-    description:
-      "Custom, responsive websites built for speed and conversion — from marketing sites to full web platforms.",
-  },
-  {
-    label: "App Development",
-    tag: "PRODUCT FOCUS",
-    description:
-      "Web and mobile apps built from scratch, architected to handle real users and grow with your product.",
-  },
-  {
-    label: "UI/UX Design",
-    tag: "DESIGN FOCUS",
-    description:
-      "Wireframes, prototypes, and polished interfaces — designed around how people actually use the product.",
-  },
-  {
-    label: "Branding & Identity",
-    tag: "IDENTITY FOCUS",
-    description:
-      "Logo, color system, typography, and a visual identity that stays consistent everywhere it shows up.",
-  },
-  {
-    label: "Automation & Tools",
-    tag: "EFFICIENCY FOCUS",
-    description:
-      "Internal tools and workflow automations that cut out repetitive work and save your team real hours.",
-  },
-  {
-    label: "Social Creatives",
-    tag: "CONTENT FOCUS",
-    description:
-      "Scroll-stopping social media creatives that keep your brand consistent, recognizable, and ready to publish.",
-  },
-  {
-    label: "Packaging",
-    tag: "PACKAGING FOCUS",
-    description:
-      "Distinctive packaging systems that make products easier to recognize, understand, and choose.",
-  },
-  {
-    label: "Editorial Design",
-    tag: "EDITORIAL FOCUS",
-    description:
-      "Editorial layouts and visual systems for print and digital content that make complex stories easy to follow.",
-  },
-];
+import { SERVICES } from "@/lib/services";
 
 export default function DiscoveryModule() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const active = CATEGORIES[activeIndex];
+  const active = SERVICES[activeIndex];
 
   return (
     <section className="flex w-full flex-col items-center justify-center">
@@ -85,7 +29,7 @@ export default function DiscoveryModule() {
 
         {/* Category tabs */}
         <div className="flex flex-wrap gap-[8px] py-[16px]">
-          {CATEGORIES.map((category, index) => {
+          {SERVICES.map((category, index) => {
             const isActive = index === activeIndex;
             return (
               <button
