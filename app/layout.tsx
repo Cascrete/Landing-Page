@@ -65,17 +65,19 @@ export const metadata: Metadata = {
       "Websites, apps, branding, social creatives, packaging, and editorial design built for businesses ready to move.",
     images: [
       {
-        url: "/assets/logo.svg",
-        alt: "Cascrete logo",
+        url: "/assets/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Cascrete digital product and design studio",
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Cascrete | Web, App, Brand & Design Studio",
     description:
       "Websites, apps, branding, social creatives, packaging, and editorial design built for businesses ready to move.",
-    images: ["/assets/logo.svg"],
+    images: ["/assets/og-image.png"],
   },
   robots: {
     index: true,

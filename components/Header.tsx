@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "Services", href: "#capabilities", primary: true },
   { label: "About Us", href: "#about" },
   { label: "How It Works", href: "#process" },
+  { label: "Careers", href: "/careers", external: true },
 ];
 
 export default function Header() {
@@ -38,7 +39,7 @@ export default function Header() {
         {NAV_LINKS.map((link) => (
           <a
             key={link.label}
-            href={`${homePath}${link.href}`}
+            href={link.external ? link.href : `${homePath}${link.href}`}
             className={
               link.primary
                 ? "whitespace-nowrap font-jakarta text-[15px] font-semibold leading-[24px] text-ink-900"
