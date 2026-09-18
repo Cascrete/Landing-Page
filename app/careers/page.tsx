@@ -114,34 +114,10 @@ export default function CareersPage() {
           </div>
         </section>
 
-        {/* Why Cascrete */}
-        <section className="mx-auto max-w-[1120px] px-5 py-20 md:px-10 md:py-28">
-          <div className="max-w-[720px]">
-            <span className="font-mono text-[10px] uppercase leading-[14px] tracking-[0.7px] text-primary-dark">
-              Why Cascrete?
-            </span>
-            <h2 className="mt-4 font-jakarta text-[40px] font-bold leading-[46px] tracking-[-1px] text-ink-900 max-md:text-[32px]">
-              Small team. Real ownership.
-            </h2>
-          </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {[
-              ["High impact", "Your ideas, code, and design decisions have a visible effect on the work we ship."],
-              ["Work with trust", "We value clear communication, thoughtful work, and the freedom to do your best."],
-              ["Keep learning", "Every project brings a new problem to solve and a chance to sharpen your craft."],
-            ].map(([title, description]) => (
-              <article
-                key={title}
-                className="rounded-[12px] border border-[rgba(202,196,211,0.5)] bg-surface-card p-6"
-              >
-                <h3 className="font-jakarta text-[20px] font-semibold leading-[28px] text-ink-900">{title}</h3>
-                <p className="mt-3 font-jakarta text-[15px] leading-[24px] text-ink-700">{description}</p>
-              </article>
-            ))}
-          </div>
-
+        {/* Open Roles section wrapper */}
+        <section className="mx-auto max-w-[1120px] px-5 py-10 md:px-10 md:py-14">
           {/* Open Roles */}
-          <div className="mt-20">
+          <div>
             <span className="font-mono text-[10px] uppercase leading-[14px] tracking-[0.7px] text-primary-dark">
               Open Positions
             </span>
@@ -289,6 +265,33 @@ export default function CareersPage() {
             >
               careers@cascrete.com
             </a>
+          </div>
+        </section>
+
+        {/* Why Cascrete */}
+        <section className="mx-auto max-w-[1120px] px-5 pb-24 md:px-10 md:pb-32">
+          <div className="max-w-[720px]">
+            <span className="font-mono text-[10px] uppercase leading-[14px] tracking-[0.7px] text-primary-dark">
+              Why Cascrete?
+            </span>
+            <h2 className="mt-4 font-jakarta text-[40px] font-bold leading-[46px] tracking-[-1px] text-ink-900 max-md:text-[32px]">
+              Small team. Real ownership.
+            </h2>
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {[
+              ["High impact", "Your ideas, code, and design decisions have a visible effect on the work we ship."],
+              ["Work with trust", "We value clear communication, thoughtful work, and the freedom to do your best."],
+              ["Keep learning", "Every project brings a new problem to solve and a chance to sharpen your craft."],
+            ].map(([title, description]) => (
+              <article
+                key={title}
+                className="rounded-[12px] border border-[rgba(202,196,211,0.5)] bg-surface-card p-6"
+              >
+                <h3 className="font-jakarta text-[20px] font-semibold leading-[28px] text-ink-900">{title}</h3>
+                <p className="mt-3 font-jakarta text-[15px] leading-[24px] text-ink-700">{description}</p>
+              </article>
+            ))}
           </div>
         </section>
       </main>

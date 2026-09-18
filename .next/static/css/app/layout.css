@@ -1856,6 +1856,9 @@ video {
   padding-top: 9px;
   padding-bottom: 9px;
 }
+.pb-24 {
+  padding-bottom: 6rem;
+}
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -2732,6 +2735,15 @@ body {
 
   .md\:py-32 {
     padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .md\:py-14 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .md\:pb-32 {
     padding-bottom: 8rem;
   }
 }
