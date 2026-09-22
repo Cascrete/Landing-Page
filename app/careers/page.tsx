@@ -10,6 +10,46 @@ export const metadata = {
 
 const OPEN_ROLES = [
   {
+    id: "lead-generation-intern",
+    badge: "Internship · Remote",
+    title: "Lead Generation Intern",
+    tagline: "Find the right people. Start the right conversations.",
+    about: [
+      "We're looking for a resourceful Lead Generation Intern who can identify high-potential clients for Cascrete and craft outreach that actually gets replies. You'll work directly with the founding team to build our pipeline — researching leads, qualifying prospects, and writing personalized messages that open doors.",
+      "This is a commission and performance-based role — your earnings are directly tied to the quality and impact of the leads you bring in. If you're a natural researcher, good with people, and enjoy the hunt, we want to hear from you.",
+    ],
+    details: [
+      { label: "Work Type", value: "Fully Remote" },
+      { label: "Duration", value: "3 months (renewable)" },
+      { label: "Stipend", value: "₹1,000/month (Fixed) + ₹4,000/month (Incentive)" },
+      { label: "Start", value: "As soon as possible" },
+    ],
+    responsibilities: [
+      "Research and identify qualified leads (founders, SMB owners, decision-makers) across target industries",
+      "Build and maintain a structured lead list with relevant context for each prospect",
+      "Write personalized outreach messages (LinkedIn DMs or emails) tailored to each lead",
+      "Track outreach status and follow-up systematically",
+      "Collaborate with the team to refine the ICP (Ideal Customer Profile) based on what's working",
+    ],
+    taskTitle: "Task",
+    taskBody: [
+      "Choose one real local gym/business that fits this scenario: Your assigned lead is a local gym that has an active Instagram account but does not have a proper website. They regularly post on Instagram and receive enquiries through Instagram/WhatsApp.",
+      "1. Lead Research: Provide the business name, their Instagram/Google/Website link, and 2–3 observations about their current digital presence.",
+      "2. Identify the Opportunity: What problem or opportunity do you see? Which one Cascrete service would you pitch to them? Why do you think this service is relevant to their business?",
+      "3. Cold Call Approach: Write a 30–60 second cold-call pitch as if you are actually calling the business owner.",
+      "4. Follow-up Message: Assume the owner says, “Okay, send me some details on WhatsApp.” Write the short WhatsApp message you would send after the call."
+    ],
+    deliverables: [
+      "A document (PDF or Google Doc) containing your responses to all 4 sections (Lead Research, Identify the Opportunity, Cold Call Approach, and Follow-up Message)",
+    ],
+    submissionSteps: [
+      "Only real, verifiable local gyms/businesses — no invented details",
+      "If using a Google Doc, set the sharing to \"Anyone with the link can view\"",
+      "Email the document link or PDF + resume or portfolio to careers@cascrete.com",
+    ],
+    email: "careers@cascrete.com",
+  },
+  {
     id: "social-media-manager-intern",
     badge: "Internship · Remote",
     title: "Social Media Manager Intern",
@@ -46,47 +86,6 @@ const OPEN_ROLES = [
       "Upload all files (post, reel / storyboard, and your source note) to a single Google Drive folder",
       "Set sharing access to \"Anyone with the link can view\" — links that require access requests won't be considered",
       "Email your public Drive link + resume or portfolio to careers@cascrete.com",
-    ],
-    email: "careers@cascrete.com",
-  },
-  {
-    id: "lead-generation-intern",
-    badge: "Internship · Remote",
-    title: "Lead Generation Intern",
-    tagline: "Find the right people. Start the right conversations.",
-    about: [
-      "We're looking for a resourceful Lead Generation Intern who can identify high-potential clients for Cascrete and craft outreach that actually gets replies. You'll work directly with the founding team to build our pipeline — researching leads, qualifying prospects, and writing personalized messages that open doors.",
-      "This is a commission and performance-based role — your earnings are directly tied to the quality and impact of the leads you bring in. If you're a natural researcher, good with people, and enjoy the hunt, we want to hear from you.",
-    ],
-    details: [
-      { label: "Work Type", value: "Fully Remote" },
-      { label: "Duration", value: "3 months (renewable)" },
-      { label: "Stipend", value: "Commission / Performance-based" },
-      { label: "Start", value: "As soon as possible" },
-    ],
-    responsibilities: [
-      "Research and identify qualified leads (founders, SMB owners, decision-makers) across target industries",
-      "Build and maintain a structured lead list with relevant context for each prospect",
-      "Write personalized outreach messages (LinkedIn DMs or emails) tailored to each lead",
-      "Track outreach status and follow-up systematically",
-      "Collaborate with the team to refine the ICP (Ideal Customer Profile) based on what's working",
-    ],
-    taskTitle: "Find 10 Real Leads + Sample Outreach",
-    taskBody: [
-      "Build a small lead list for Cascrete and show us your outreach approach.",
-      "1. Find 10 real leads — small/medium business owners, founders, or decision-makers in [pick one city/industry] who likely need one of our services (Website Development, Branding & Identity, or Social Media Creatives — pick one).",
-      "2. In a Google Sheet, list each lead with columns: Name, Title, Company, Industry, Company Size (approx.), LinkedIn URL, Reason (why they're a good fit — e.g., \"no active website,\" \"inconsistent branding\").",
-      "3. Write 3 personalized outreach messages (LinkedIn DM or email) for 3 of the 10 leads — tailored to each, not a copy-paste template. Add these on a separate tab in the same sheet.",
-    ],
-    deliverables: [
-      "A Google Sheet with 10 real, verified leads (Name, Title, Company, Industry, Company Size, LinkedIn URL, Reason)",
-      "A second tab in the same sheet with 3 personalized outreach messages for 3 of the leads",
-    ],
-    submissionSteps: [
-      "Only real, verifiable people/companies — no invented details",
-      "Use only public professional info (LinkedIn, company sites) — no paid tools required",
-      "Set the Google Sheet's sharing to \"Anyone with the link can view\"",
-      "Email the sheet link + resume or portfolio to careers@cascrete.com",
     ],
     email: "careers@cascrete.com",
   },
